@@ -4,8 +4,8 @@ import (
 	"io"
 
 	"github.com/gin-gonic/gin"
-	"github.com/yourorg/platform/framework/core"
-	"github.com/yourorg/platform/framework/router"
+	"github.com/mbadhala/go-common-api-framework/core"
+	"github.com/mbadhala/go-common-api-framework/router"
 )
 
 func Gin(r *router.Router) *gin.Engine {

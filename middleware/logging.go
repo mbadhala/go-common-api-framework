@@ -5,7 +5,7 @@ import (
 	"log"
 	"time"
 
-	"github.com/yourorg/platform/framework/core"
+	"github.com/mbadhala/go-common-api-framework/core"
 )
 
 func Logging() Middleware {

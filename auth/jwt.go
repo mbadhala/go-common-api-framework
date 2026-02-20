@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/golang-jwt/jwt/v5"
-	"github.com/yourorg/platform/framework/core"
-	"github.com/yourorg/platform/framework/middleware"
+	"github.com/mbadhala/go-common-api-framework/core"
+	"github.com/mbadhala/go-common-api-framework/middleware"
 )
 
 type ctxKey struct{}

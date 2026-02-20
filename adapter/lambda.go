@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/aws/aws-lambda-go/events"
-	"github.com/yourorg/platform/framework/core"
-	"github.com/yourorg/platform/framework/router"
+	"github.com/mbadhala/go-common-api-framework/core"
+	"github.com/mbadhala/go-common-api-framework/router"
 )
 
 func Lambda(r *router.Router) func(context.Context, events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {

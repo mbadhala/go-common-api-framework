@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/yourorg/platform/framework/core"
+	"github.com/mbadhala/go-common-api-framework/core"
 )
 
 type Middleware func(core.Handler) core.Handler
