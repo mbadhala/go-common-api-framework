@@ -14,6 +14,7 @@ type route struct {
 	path        string
 	handler     core.Handler
 	middlewares []middleware.Middleware
+	meta        *RouteMeta
 }
 
 type Router struct {
@@ -60,6 +61,24 @@ func (r *Router) Handle(method, path string, h core.Handler, m ...middleware.Mid
 		path:        r.prefix + path,
 		handler:     h,
 		middlewares: allMiddleware,
+	}
+
+	root := r.root()
+	root.routes = append(root.routes, rt)
+}
+
+func (r *Router) HandleWithMeta(
+	method, path string, h core.Handler, meta RouteMeta, m ...middleware.Middleware) {
+	meta.Method = method
+	meta.Path = r.prefix + path
+	allMiddleware := append(r.collectMiddleware(), m...)
+
+	rt := route{
+		method:      method,
+		path:        r.prefix + path,
+		handler:     h,
+		middlewares: allMiddleware,
+		meta:        &meta,
 	}
 
 	root := r.root()
