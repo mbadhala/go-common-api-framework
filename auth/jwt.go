@@ -16,8 +16,12 @@ type ctxKey struct{}
 var claimsKey ctxKey
 
 type Claims struct {
-	Sub   string   `json:"sub"`
-	Roles []string `json:"roles"`
+	Sub      string   `json:"sub"`
+	Roles    []string `json:"roles"`
+	Id       int64    `json:"id"`
+	ClinicID int64    `json:"clien"`
+	Name     string   `json:"name"`
+	Email    string   `json:"email"`
 	jwt.RegisteredClaims
 }
 
