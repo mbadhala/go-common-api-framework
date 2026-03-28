@@ -18,8 +18,8 @@ var claimsKey ctxKey
 type Claims struct {
 	Sub      string   `json:"sub"`
 	Roles    []string `json:"roles"`
-	Id       int64    `json:"id"`
-	ClinicID int64    `json:"clien"`
+	Id       int64    `json:"userid"`
+	ClinicID int64    `json:"clinicid"`
 	Name     string   `json:"name"`
 	Email    string   `json:"email"`
 	jwt.RegisteredClaims
@@ -51,7 +51,6 @@ func JWT(publicKey *rsa.PublicKey) middleware.Middleware {
 			claims := token.Claims.(*Claims)
 
 			ctx = context.WithValue(ctx, claimsKey, claims)
-
 			return next(ctx, req)
 		}
 	}
